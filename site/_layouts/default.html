@@ -12,6 +12,7 @@
     <meta name="description" content="{{ site.description }}" />
 
     <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" />
 
     <meta property="og:title" content="Easy Starters" />
     <meta property="og:description" content="{{ site.description }}" />
@@ -19,6 +20,24 @@
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/" />
 
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/" />
+
+    <!--
+      Set the saved/system theme before CSS loads.
+      This prevents a light-theme flash when dark mode is active.
+    -->
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("theme");
+
+        const theme =
+          savedTheme ??
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
 
     <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}" />
   </head>
@@ -31,23 +50,55 @@
           href="{{ site.baseurl }}/"
           aria-label="Easy Starters home"
         >
-          Easy Starters
+          <span class="brand-mark" aria-hidden="true"></span>
+
+          <span>Easy Starters</span>
         </a>
 
-        <nav aria-label="Primary navigation">
-          <a href="#starters">Starters</a>
+        <div class="nav-actions">
+          <nav aria-label="Primary navigation">
+            <a href="#starters">Starters</a>
 
-          <a
-            href="https://github.com/FonijBuild/easy-starters"
-            rel="noopener noreferrer"
+            <a
+              href="https://github.com/FonijBuild/easy-starters"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+            <a href="https://github.com/FonijBuild" rel="noopener noreferrer">
+              FonijBuild
+            </a>
+          </nav>
+
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
           >
-            GitHub
-          </a>
+            <svg
+              class="theme-icon theme-icon--sun"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
 
-          <a href="https://github.com/FonijBuild" rel="noopener noreferrer">
-            FonijBuild
-          </a>
-        </nav>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+              ></path>
+            </svg>
+
+            <svg
+              class="theme-icon theme-icon--moon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79Z"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -56,13 +107,48 @@
     </main>
 
     <footer class="site-footer">
-      <span>Easy Starters</span>
+      <div class="site-footer__inner">
+        <span>Easy Starters</span>
 
-      <span aria-hidden="true">·</span>
+        <span class="footer-dot" aria-hidden="true">·</span>
 
-      <a href="https://github.com/FonijBuild" rel="noopener noreferrer">
-        Powered by FonijBuild
-      </a>
+        <a href="https://github.com/FonijBuild" rel="noopener noreferrer">
+          Powered by FonijBuild
+        </a>
+      </div>
     </footer>
+
+    <script>
+      (() => {
+        const toggle = document.querySelector("#theme-toggle");
+        const root = document.documentElement;
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+
+        function updateThemeColor(theme) {
+          themeColor?.setAttribute(
+            "content",
+            theme === "dark" ? "#0b1020" : "#ffffff",
+          );
+        }
+
+        function setTheme(theme) {
+          root.dataset.theme = theme;
+          localStorage.setItem("theme", theme);
+
+          toggle?.setAttribute(
+            "aria-label",
+            theme === "dark" ? "Switch to light theme" : "Switch to dark theme",
+          );
+
+          updateThemeColor(theme);
+        }
+
+        setTheme(root.dataset.theme);
+
+        toggle?.addEventListener("click", () => {
+          setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+        });
+      })();
+    </script>
   </body>
 </html>
