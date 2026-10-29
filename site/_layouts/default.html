@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
+    </title>
+
+    <meta name="description" content="{{ site.description }}" />
+
+    <meta name="color-scheme" content="light dark" />
+
+    <meta property="og:title" content="Easy Starters" />
+    <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/" />
+
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/" />
+
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}" />
+  </head>
+
+  <body>
+    <header class="site-nav">
+      <div class="site-nav__inner">
+        <a
+          class="brand"
+          href="{{ site.baseurl }}/"
+          aria-label="Easy Starters home"
+        >
+          Easy Starters
+        </a>
+
+        <nav aria-label="Primary navigation">
+          <a href="#starters">Starters</a>
+
+          <a
+            href="https://github.com/FonijBuild/easy-starters"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a href="https://github.com/FonijBuild" rel="noopener noreferrer">
+            FonijBuild
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <article class="markdown-body">{{ content }}</article>
+    </main>
+
+    <footer class="site-footer">
+      <span>Easy Starters</span>
+
+      <span aria-hidden="true">·</span>
+
+      <a href="https://github.com/FonijBuild" rel="noopener noreferrer">
+        Powered by FonijBuild
+      </a>
+    </footer>
+  </body>
+</html>

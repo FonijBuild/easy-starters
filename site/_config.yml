@@ -1,0 +1,14 @@
+title: Easy Starters
+description: Production-ready software foundations for web, API, mobile, browser extension, and documentation.
+
+url: "https://fonijbuild.github.io"
+baseurl: "/easy-starters"
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - README.md
