@@ -20,7 +20,11 @@
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/" />
 
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/" />
-
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ '/assets/favicon.svg' | relative_url }}"
+    />
     <!--
       Set the saved/system theme before CSS loads.
       This prevents a light-theme flash when dark mode is active.
@@ -50,7 +54,12 @@
           href="{{ site.baseurl }}/"
           aria-label="Easy Starters home"
         >
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img
+            class="brand-logo"
+            src="{{ '/assets/favicon.svg' | relative_url }}"
+            alt=""
+            aria-hidden="true"
+          />
 
           <span>Easy Starters</span>
         </a>

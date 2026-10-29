@@ -10,7 +10,7 @@
 ![Spec Driven](https://img.shields.io/badge/development-spec--driven-3178C6)
 ![AI First](https://img.shields.io/badge/AI--first-6C63FF)
 
-<img width="2172" height="724" alt="linkedin-banner" src="./site/assets/easy-starters-banner.jpg" />
+<img width="2172" height="724" alt="easy-starters-banner" src="./site/assets/easy-starters-banner.jpg" />
 
 [Website](https://fonijbuild.github.io/easy-starters/) · [FonijBuild](https://github.com/FonijBuild) · [Discussions](https://github.com/orgs/FonijBuild/discussions)
 

@@ -32,7 +32,7 @@ jobs:
             echo "title: Easy Starters"
             echo "---"
             echo
-            cat README.md
+            sed 's#\./site/assets/#./assets/#g' README.md
           } > site/index.md
 
       - name: Setup Pages

@@ -1,75 +1,50 @@
 :root {
   color-scheme: light;
-
   --bg: #ffffff;
   --bg-soft: #f8f9fc;
-
   --surface: #ffffff;
   --surface-soft: #f6f7fb;
   --surface-hover: #f1f3f8;
-
   --text: #18213d;
   --text-strong: #10172a;
   --muted: #626b7d;
-
   --border: #e1e4eb;
   --border-strong: #d3d7e0;
-
   --accent: #635bff;
   --accent-hover: #5147e5;
-
   --accent-purple: #7536ff;
   --accent-blue: #2878f5;
   --accent-green: #22cfa0;
-
   --code-bg: #f5f6fa;
-
   --nav-bg: rgba(255, 255, 255, 0.82);
-
   --shadow-sm:
     0 1px 2px rgba(16, 24, 40, 0.04), 0 2px 8px rgba(16, 24, 40, 0.04);
-
   --shadow-md: 0 10px 30px rgba(16, 24, 40, 0.07);
-
   --max-width: 1040px;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-
   --bg: #0b1020;
   --bg-soft: #0f1528;
-
   --surface: #11182a;
   --surface-soft: #151d31;
   --surface-hover: #1a2338;
-
   --text: #d9dde8;
   --text-strong: #f7f8fb;
   --muted: #9098aa;
-
   --border: #252e43;
   --border-strong: #323c54;
-
   --accent: #8a80ff;
   --accent-hover: #a199ff;
-
   --accent-purple: #8c52ff;
   --accent-blue: #3a8cff;
   --accent-green: #2bd7a7;
-
   --code-bg: #11182a;
-
   --nav-bg: rgba(11, 16, 32, 0.82);
-
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.12);
-
   --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.18);
 }
-
-/* ----------------------------------
-   Reset
----------------------------------- */
 
 *,
 *::before,
@@ -85,7 +60,6 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-
   background:
     radial-gradient(
       circle at 10% 0%,
@@ -98,9 +72,7 @@ body {
       transparent 28rem
     ),
     var(--bg);
-
   color: var(--text);
-
   font-family:
     Inter,
     ui-sans-serif,
@@ -108,10 +80,8 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-
   font-size: 16px;
   line-height: 1.7;
-
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -124,7 +94,6 @@ a {
 a {
   color: var(--accent);
   text-decoration: none;
-
   transition:
     color 160ms ease,
     opacity 160ms ease;
@@ -138,19 +107,12 @@ a:hover {
   background: color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
-/* ----------------------------------
-   Navigation
----------------------------------- */
-
 .site-nav {
   position: sticky;
   top: 0;
   z-index: 20;
-
   border-bottom: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
-
   background: var(--nav-bg);
-
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -159,10 +121,8 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   width: min(calc(100% - 2rem), var(--max-width));
   min-height: 4rem;
-
   margin-inline: auto;
 }
 
@@ -170,14 +130,10 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-
   color: var(--text-strong);
-
   font-size: 0.95rem;
   font-weight: 700;
-
   letter-spacing: -0.01em;
-
   text-decoration: none;
 }
 
@@ -186,24 +142,11 @@ a:hover {
   text-decoration: none;
 }
 
-.brand-mark {
-  width: 1.1rem;
-  height: 1.1rem;
-
-  border-radius: 0.3rem;
-
-  background: linear-gradient(
-    135deg,
-    var(--accent-purple) 0%,
-    var(--accent-blue) 55%,
-    var(--accent-green) 100%
-  );
-
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent),
-    0 3px 12px color-mix(in srgb, var(--accent) 18%, transparent);
-
-  transform: rotate(-10deg);
+.brand-logo {
+  display: block;
+  width: 1.65rem;
+  height: 1.65rem;
+  object-fit: contain;
 }
 
 .nav-actions {
@@ -220,10 +163,8 @@ a:hover {
 
 .site-nav nav a {
   color: var(--muted);
-
   font-size: 0.875rem;
   font-weight: 500;
-
   text-decoration: none;
 }
 
@@ -231,32 +172,19 @@ a:hover {
   color: var(--text-strong);
 }
 
-/* ----------------------------------
-   Theme toggle
----------------------------------- */
-
 .theme-toggle {
   position: relative;
-
   display: inline-grid;
   place-items: center;
-
   width: 2.25rem;
   height: 2.25rem;
-
   padding: 0;
-
   border: 1px solid var(--border);
   border-radius: 0.65rem;
-
   background: var(--surface);
-
   color: var(--muted);
-
   cursor: pointer;
-
   box-shadow: var(--shadow-sm);
-
   transition:
     color 160ms ease,
     background 160ms ease,
@@ -266,32 +194,25 @@ a:hover {
 
 .theme-toggle:hover {
   border-color: var(--border-strong);
-
   background: var(--surface-hover);
-
   color: var(--text-strong);
-
   transform: translateY(-1px);
 }
 
 .theme-toggle:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--accent) 25%, transparent);
-
   outline-offset: 2px;
 }
 
 .theme-icon {
   position: absolute;
-
   width: 1.05rem;
   height: 1.05rem;
-
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
-
   transition:
     opacity 160ms ease,
     transform 180ms ease;
@@ -317,34 +238,19 @@ a:hover {
   transform: rotate(-35deg) scale(0.7);
 }
 
-/* ----------------------------------
-   Page
----------------------------------- */
-
 .page {
   width: min(calc(100% - 2rem), var(--max-width));
-
   margin-inline: auto;
-
   padding-block: clamp(2.5rem, 6vw, 4.5rem) 5.5rem;
 }
 
-/* ----------------------------------
-   README hero
----------------------------------- */
-
 .markdown-body > div:first-child {
   position: relative;
-
   margin-block-end: 3.5rem;
-
   padding: clamp(2.75rem, 7vw, 5rem) clamp(1.25rem, 5vw, 3.25rem);
-
   overflow: hidden;
-
   border: 1px solid var(--border);
   border-radius: 1.4rem;
-
   background:
     radial-gradient(
       circle at 15% 20%,
@@ -357,18 +263,14 @@ a:hover {
       transparent 18rem
     ),
     var(--surface);
-
   box-shadow: var(--shadow-md);
 }
 
 .markdown-body > div:first-child::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
   pointer-events: none;
-
   background: linear-gradient(
     120deg,
     transparent 0%,
@@ -384,7 +286,6 @@ a:hover {
 
 .markdown-body > div:first-child h1 {
   margin-bottom: 0.85rem;
-
   background: linear-gradient(
     120deg,
     var(--text-strong) 15%,
@@ -392,26 +293,19 @@ a:hover {
     var(--accent-blue) 72%,
     var(--accent-green) 105%
   );
-
   -webkit-background-clip: text;
   background-clip: text;
-
   color: transparent;
 }
 
 .markdown-body > div:first-child p {
   max-width: 760px;
-
   margin-inline: auto;
 }
 
 .markdown-body > div:first-child strong {
   color: var(--text);
 }
-
-/* ----------------------------------
-   Typography
----------------------------------- */
 
 .markdown-body {
   color: var(--text);
@@ -421,40 +315,30 @@ a:hover {
 .markdown-body h2,
 .markdown-body h3 {
   color: var(--text-strong);
-
   line-height: 1.2;
-
   scroll-margin-top: 5.5rem;
 }
 
 .markdown-body h1 {
   margin-block: 0 0.75rem;
-
   font-size: clamp(2.6rem, 7vw, 4.6rem);
-
   font-weight: 800;
   letter-spacing: -0.055em;
 }
 
 .markdown-body h2 {
   margin-block: 4rem 1.4rem;
-
   padding-block-end: 0.7rem;
-
   border-bottom: 1px solid var(--border);
-
   font-size: clamp(1.55rem, 4vw, 2.05rem);
-
   font-weight: 720;
   letter-spacing: -0.035em;
 }
 
 .markdown-body h3 {
   margin-block: 2.4rem 0.8rem;
-
   font-size: 1.25rem;
   font-weight: 680;
-
   letter-spacing: -0.018em;
 }
 
@@ -472,10 +356,6 @@ a:hover {
   color: var(--text-strong);
 }
 
-/* ----------------------------------
-   Lists
----------------------------------- */
-
 .markdown-body ul,
 .markdown-body ol {
   padding-inline-start: 1.4rem;
@@ -489,20 +369,12 @@ a:hover {
   color: var(--accent);
 }
 
-/* ----------------------------------
-   Blockquote
----------------------------------- */
-
 .markdown-body blockquote {
   margin: 2rem 0;
-
   padding: 1.1rem 1.3rem;
-
   border: 1px solid var(--border);
   border-inline-start: 3px solid var(--accent);
-
   border-radius: 0.7rem;
-
   background:
     linear-gradient(
       90deg,
@@ -510,7 +382,6 @@ a:hover {
       transparent
     ),
     var(--surface-soft);
-
   color: var(--muted);
 }
 
@@ -518,37 +389,24 @@ a:hover {
   margin-bottom: 0;
 }
 
-/* ----------------------------------
-   Tables
----------------------------------- */
-
 .markdown-body table {
   display: table;
-
   width: 100%;
-
   margin-block: 1.75rem 2.25rem;
-
   overflow: hidden;
-
   border: 1px solid var(--border);
   border-spacing: 0;
   border-collapse: separate;
-
   border-radius: 0.9rem;
-
   background: var(--surface);
-
   box-shadow: var(--shadow-sm);
 }
 
 .markdown-body th,
 .markdown-body td {
   padding: 0.9rem 1rem;
-
   border: 0;
   border-bottom: 1px solid var(--border);
-
   text-align: start;
   vertical-align: top;
 }
@@ -564,9 +422,7 @@ a:hover {
 
 .markdown-body th {
   background: var(--surface-soft);
-
   color: var(--text-strong);
-
   font-size: 0.86rem;
   font-weight: 650;
 }
@@ -579,54 +435,33 @@ a:hover {
   background: var(--surface-hover);
 }
 
-/* ----------------------------------
-   Code
----------------------------------- */
-
 .markdown-body code {
   padding: 0.15rem 0.4rem;
-
   border: 1px solid var(--border);
   border-radius: 0.35rem;
-
   background: var(--code-bg);
-
   color: var(--text-strong);
-
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-
   font-size: 0.875em;
 }
 
 .markdown-body pre {
   margin-block: 1.6rem;
-
   padding: 1.2rem;
-
   overflow-x: auto;
-
   border: 1px solid var(--border);
   border-radius: 0.8rem;
-
   background: var(--code-bg);
-
   box-shadow: var(--shadow-sm);
 }
 
 .markdown-body pre code {
   padding: 0;
-
   border: 0;
-
   background: transparent;
-
   font-size: 0.855rem;
   line-height: 1.65;
 }
-
-/* ----------------------------------
-   Images + badges
----------------------------------- */
 
 .markdown-body img {
   max-width: 100%;
@@ -635,30 +470,18 @@ a:hover {
 
 .markdown-body div[align="center"] img {
   display: inline-block;
-
   width: auto;
-
   margin: 0.18rem 0.1rem;
 }
 
-/* ----------------------------------
-   Divider
----------------------------------- */
-
 .markdown-body hr {
   margin-block: 3.5rem;
-
   border: 0;
   border-top: 1px solid var(--border);
 }
 
-/* ----------------------------------
-   Footer
----------------------------------- */
-
 .site-footer {
   border-top: 1px solid var(--border);
-
   background: color-mix(in srgb, var(--surface-soft) 62%, transparent);
 }
 
@@ -667,17 +490,11 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
   gap: 0.45rem;
-
   width: min(calc(100% - 2rem), var(--max-width));
-
   min-height: 5.5rem;
-
   margin-inline: auto;
-
   color: var(--muted);
-
   font-size: 0.84rem;
 }
 
@@ -688,10 +505,6 @@ a:hover {
 .footer-dot {
   color: var(--border-strong);
 }
-
-/* ----------------------------------
-   Motion
----------------------------------- */
 
 @media (prefers-reduced-motion: no-preference) {
   body,
@@ -706,10 +519,6 @@ a:hover {
       border-color 180ms ease;
   }
 }
-
-/* ----------------------------------
-   Mobile
----------------------------------- */
 
 @media (max-width: 720px) {
   .site-nav__inner {
@@ -730,13 +539,11 @@ a:hover {
 
   .page {
     width: min(calc(100% - 1.25rem), var(--max-width));
-
     padding-block: 1.75rem 4rem;
   }
 
   .markdown-body > div:first-child {
     padding: 2.75rem 1rem;
-
     border-radius: 1rem;
   }
 
@@ -750,16 +557,13 @@ a:hover {
 
   .markdown-body table {
     display: block;
-
     overflow-x: auto;
-
     border-radius: 0.75rem;
   }
 
   .markdown-body th,
   .markdown-body td {
     min-width: 10rem;
-
     padding: 0.75rem 0.85rem;
   }
 }
