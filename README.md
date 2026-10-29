@@ -54,5 +54,3 @@ If you find a bug or want to propose an improvement to a specific foundation, op
 For ideas that affect the whole Easy Starters collection, use [Easy Starters Issues](https://github.com/FonijBuild/easy-starters/issues).
 
 For broader product and architecture discussions, use [FonijBuild Discussions](https://github.com/orgs/FonijBuild/discussions).
-
----
