@@ -493,14 +493,25 @@ a:hover {
 .site-footer__inner {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.45rem;
+  justify-content: space-between;
+  gap: 1rem;
+
   width: min(calc(100% - 2rem), var(--max-width));
   min-height: 5.5rem;
   margin-inline: auto;
+
   color: var(--muted);
   font-size: 0.84rem;
+}
+
+.site-footer__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.site-footer__quote {
+  text-align: left;
 }
 
 .site-footer a {
@@ -509,6 +520,19 @@ a:hover {
 
 .footer-dot {
   color: var(--border-strong);
+}
+
+@media (max-width: 640px) {
+  .site-footer__inner {
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 1.25rem;
+    text-align: center;
+  }
+
+  .site-footer__quote {
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

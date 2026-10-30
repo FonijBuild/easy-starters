@@ -16,8 +16,6 @@
 
 </div>
 
-> “What do we build for, if not to lessen each other’s hardship?”
-
 ## The Philosophy
 
 **Production-capable, not bloated.**  

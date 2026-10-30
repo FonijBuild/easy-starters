@@ -25,10 +25,7 @@
       type="image/svg+xml"
       href="{{ '/assets/favicon.svg' | relative_url }}"
     />
-    <!--
-      Set the saved/system theme before CSS loads.
-      This prevents a light-theme flash when dark mode is active.
-    -->
+
     <script>
       (() => {
         const savedTheme = localStorage.getItem("theme");
@@ -117,13 +114,19 @@
 
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <span>Easy Starters</span>
+        <span class="site-footer__quote">
+          What do we build for, if not to lessen each other’s hardship?
+        </span>
 
-        <span class="footer-dot" aria-hidden="true">·</span>
+        <div class="site-footer__meta">
+          <span>Easy Starters</span>
 
-        <a href="https://github.com/FonijBuild" rel="noopener noreferrer">
-          Powered by FonijBuild
-        </a>
+          <span class="footer-dot" aria-hidden="true">·</span>
+
+          <a href="https://github.com/FonijBuild" rel="noopener noreferrer">
+            Powered by FonijBuild
+          </a>
+        </div>
       </div>
     </footer>
 
