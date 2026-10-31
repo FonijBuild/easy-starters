@@ -495,11 +495,9 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-
   width: min(calc(100% - 2rem), var(--max-width));
   min-height: 5.5rem;
   margin-inline: auto;
-
   color: var(--muted);
   font-size: 0.84rem;
 }
